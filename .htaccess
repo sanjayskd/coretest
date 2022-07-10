@@ -1,0 +1,20 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !^
+
+
+RewriteCond %{HTTP_HOST} ^domainname.com
+
+RewriteRule (.*) https://www.domainname.com/$1 [R=301,L]
+RewriteRule ^404 404.php [NC,L] 
+RewriteRule ^www.domainname.com/ https://domainname.com/ [NC,L]
+RewriteRule ^blog/(.*)?$ blogs-details.php?page_url=$1  [NC,L]
+RewriteRule ^login admin/index.php [NC,L] 
+RewriteRule ^about about.php [NC,L] 
+RewriteRule ^pay(.*)/([^/\.]+)/?$ pay.php?type=$1&paymenttype=$2 
+RewriteRule ^our-projects/([^/\.]+)/([^/\.]+)$ department.php?page-url=$1&sub-url=$2
+RewriteRule ^([^/\.]+)/([^/\.]+)/([^/\.]+)?$ details.php?page-url=$1&sub-url=$2&sub-sub-url=$3
+RewriteRule ^subpages/([^/\.]+)?$ sub-page.php?page-url=$1&sub-url=$2
+RewriteRule ^(./)?$ index.php?page-url=$1
+RewriteRule ^([^/\.]+)/([^/\.]+)?$ test.php?type=$1&page-url=$2
+RewriteRule ^([^/\.]+)?$ landing-page.php?page-url=$1
