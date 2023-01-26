@@ -1,6 +1,5 @@
 <?php  
 
-$allowed_image_extension = array("png","jpg","jpeg","PNG","JPEG","JPG");
 						$background_image = '';
 						if($_FILES["background_image"]["name"] != ''){
 							$file_extension = explode(".",$_FILES["background_image"]["name"]);
